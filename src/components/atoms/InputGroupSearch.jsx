@@ -1,4 +1,16 @@
-const InputGroupSearch = () => {
+import { useEffect, useState } from "react";
+import { searchRecipes } from "../../service/recipes.service";
+
+const InputGroupSearch = ({ setRecipes }) => {
+  const [search, setSearch] = useState("");
+  const onClickSearch = async (q) => {
+    const data = await searchRecipes(q);
+    setRecipes(data.data.recipes);
+  };
+
+  useEffect(() => {
+    onClickSearch(search);
+  }, [search]);
   return (
     <form className="max-w-md mx-auto">
       <div className="relative">
@@ -23,6 +35,10 @@ const InputGroupSearch = () => {
           type="search"
           className=" w-80 sm:w-96 p-4 ps-10 text-sm placeholder:text-sm text-black border border-gray-300 rounded-lg bg-white shadow-xl "
           placeholder="Cari resep yang ingin anda masak..."
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          value={search}
         />
         <button
           type="submit"

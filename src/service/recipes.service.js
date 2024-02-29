@@ -10,3 +10,8 @@ export const fetchDataCategoryRecipes = async (query) => {
   const data = await axios.get(`${BASE_URL}/recipes/tag/${query}`);
   return data;
 };
+
+export const searchRecipes = async (query) => {
+  const data = await axios.get(`${BASE_URL}/recipes/search?q=${query}`);
+  return data;
+};
