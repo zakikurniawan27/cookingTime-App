@@ -1,0 +1,50 @@
+[
+  {
+    "value": "all",
+    "label": "Semua"
+  },
+  {
+    "value": "Chicken",
+    "label": "Ayam"
+  },
+  {
+    "value": "Vegetarian",
+    "label": "Sayur"
+  },
+  {
+    "value": "Beef",
+    "label": "Daging"
+  },
+  {
+    "value": "Soup",
+    "label": "Sup"
+  },
+  {
+    "value": "Roti",
+    "label": "Roti"
+  },
+  {
+    "value": "Dessert",
+    "label": "Dessert"
+  },
+  {
+    "value": "Salad",
+    "label": "Salad"
+  },
+  {
+    "value": "Pasta",
+    "label": "Pasta"
+  },
+  {
+    "value": "Kebabs",
+    "label": "Kebab"
+  },
+  {
+    "value": "Rice",
+    "label": "Nasi"
+  },
+  {
+    "value": "Ramen",
+    "label": "Ramen"
+  }
+]

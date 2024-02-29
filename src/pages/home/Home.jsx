@@ -1,11 +1,11 @@
-import TemplateHome from "../../components/templates/TemplateHome"
+import TemplateHome from "../../components/templates/TemplateHome";
 
 const Home = () => {
   return (
     <main>
-        <TemplateHome/>
+      <TemplateHome />
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
