@@ -7,7 +7,8 @@ import {
 const ButtonTags = ({ setCategory, setOnCategory }) => {
   const clickMenu = async (category) => {
     if (category.value == "all") {
-      fetchDataRecipes((setOnCategory = { setOnCategory }));
+      fetchDataRecipes();
+      setOnCategory(false);
     } else {
       const data = await fetchDataCategoryRecipes(category.value);
       setCategory(data.data.recipes);

@@ -7,11 +7,11 @@ const CardContent = ({
   recipes,
   setRecipes,
   category,
-  setOnCategory,
+
   onCategory,
 }) => {
   const getDataRecipes = async () => {
-    const data = await fetchDataRecipes((setOnCategory = { setOnCategory }));
+    const data = await fetchDataRecipes();
     setRecipes(data.data.recipes);
   };
   useEffect(() => {
