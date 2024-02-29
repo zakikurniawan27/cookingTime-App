@@ -3,13 +3,7 @@ import { fetchDataRecipes } from "../../service/recipes.service";
 import { useEffect } from "react";
 import Badge from "./Badge";
 
-const CardContent = ({
-  recipes,
-  setRecipes,
-  category,
-
-  onCategory,
-}) => {
+const CardContent = ({ recipes, setRecipes, category, onCategory }) => {
   const getDataRecipes = async () => {
     const data = await fetchDataRecipes();
     setRecipes(data.data.recipes);
