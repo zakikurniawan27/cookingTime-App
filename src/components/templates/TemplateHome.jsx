@@ -1,4 +1,5 @@
 import ContentTitle from "../organisms/ContentTitle";
+import Footer from "../organisms/Footer";
 import MainContent from "../organisms/MainContent";
 import Navbar from "../organisms/navbar";
 import { useState } from "react";
@@ -22,6 +23,7 @@ const TemplateHome = () => {
           setCategory={setCategory}
         />
       </section>
+      <Footer />
     </div>
   );
 };
