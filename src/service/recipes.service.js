@@ -15,3 +15,8 @@ export const searchRecipes = async (query) => {
   const data = await axios.get(`${BASE_URL}/recipes/search?q=${query}`);
   return data;
 };
+
+export const fetchDataDetailRecipes = async (id) => {
+  const data = await axios.get(`${BASE_URL}/recipes/${id}`);
+  return data;
+};

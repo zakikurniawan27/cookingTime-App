@@ -1,7 +1,7 @@
 import LogoImage from "../atoms/LogoImage";
 import ListNavbar from "../molecules/ListNavbar";
 
-const Navbar = ({ navbar, mainContent }) => {
+const Navbar = ({ navbar, mainContent, detail }) => {
   return (
     <header className="shadow-lg bg-white px-3 sm:px-7 md:px-10">
       <nav className="flex justify-between h-full">
@@ -9,7 +9,7 @@ const Navbar = ({ navbar, mainContent }) => {
           <LogoImage navbar={navbar} mainContent={mainContent} />
         </div>
         <div className="flex items-center">
-          <ListNavbar />
+          <ListNavbar detail={detail} />
         </div>
       </nav>
     </header>
