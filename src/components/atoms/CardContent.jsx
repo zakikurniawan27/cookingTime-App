@@ -25,15 +25,15 @@ const CardContent = ({ recipes, setRecipes, category, onCategory }) => {
               <div className="md:p-5">
                 <div href="#">
                   <h5 className="mb-2 text-xs lg:text-lg font-bold text-gray-900">
-                    <Link to={item.id}>{item.name}</Link>
+                    <Link to={`detail/${item.id}`}>{item.name}</Link>
                   </h5>
                 </div>
                 <div className="mb-2">
-                  <Badge mealType={item.mealType[0]} />
+                  <Badge data={item.mealType[0]} />
                   {item.mealType[1] ? (
-                    <Badge mealType={item.mealType[1]} />
+                    <Badge data={item.mealType[1]} />
                   ) : item.mealType[3] ? (
-                    <Badge mealType={item.mealType[2]} />
+                    <Badge data={item.mealType[2]} />
                   ) : (
                     ""
                   )}

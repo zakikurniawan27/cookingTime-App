@@ -10,7 +10,7 @@ const LogoImage = ({ navbar, mainContent }) => {
           ? "w-28 sm:w-36 md:w-52"
           : mainContent == true
           ? "w-56 sm:w-72"
-          : ""
+          : "w-28 sm:w-36 md:w-52"
       }
     />
   );

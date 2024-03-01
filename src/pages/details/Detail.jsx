@@ -1,5 +1,11 @@
+import TemplateDetail from "../../components/templates/TemplateDetail";
+
 const Detail = () => {
-  return <div>Detail</div>;
+  return (
+    <main>
+      <TemplateDetail />
+    </main>
+  );
 };
 
 export default Detail;
