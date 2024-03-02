@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import { searchRecipes } from "../../service/recipes.service";
+import { useDispatch } from "react-redux";
+import { searchDataRecipesCall } from "../../store/action/recipesAction";
 
-const InputGroupSearch = ({ setRecipes }) => {
+const InputGroupSearch = () => {
   const [search, setSearch] = useState("");
-  const onClickSearch = async (q) => {
-    const data = await searchRecipes(q);
-    setRecipes(data.data.recipes);
-  };
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    onClickSearch(search);
-  }, [search]);
+    dispatch(searchDataRecipesCall(search));
+  }, [search, dispatch]);
   return (
     <form className="max-w-md mx-auto">
       <div className="relative">
@@ -43,6 +40,7 @@ const InputGroupSearch = ({ setRecipes }) => {
         <button
           type="submit"
           className="text-white absolute end-14 sm:end-10 bottom-2.5 bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+          onClick={() => dispatch(searchDataRecipesCall(search))}
         >
           Cari
         </button>

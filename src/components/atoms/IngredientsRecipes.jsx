@@ -5,7 +5,7 @@ const IngredientsRecipes = (props) => {
       <tbody>
         {ingredient.map((item, index) => (
           <tr key={index} className="border-b border-gray-500">
-            <td>{item}</td>
+            <td className="text-sm sm:text-lg">{item}</td>
           </tr>
         ))}
       </tbody>

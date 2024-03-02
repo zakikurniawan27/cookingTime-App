@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
-import { fetchDataDetailRecipes } from "../../service/recipes.service";
+import { useEffect } from "react";
 import ImageRecipes from "../atoms/ImageRecipes";
 import ContentIngredients from "../molecules/ContentIngredients";
 import ContentTitleDetail from "../molecules/ContentTitleDetail";
 import { useParams } from "react-router-dom";
 import ContentInstruction from "../molecules/ContentInstruction";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataDetailRecipesCall } from "../../store/action/recipesAction";
 
 const MainContentDetail = () => {
-  const [detail, setDetail] = useState([]);
-  const [ingredient, setIngredient] = useState([]);
-  const [instruction, setIntruction] = useState([]);
   const params = useParams();
-  const fetchDataDetail = async (id) => {
-    const data = await fetchDataDetailRecipes(id);
-    setDetail(data.data);
-    setIngredient(data.data.ingredients);
-    setIntruction(data.data.instructions);
-  };
+  const { detail } = useSelector((state) => state.recipes);
+  const { detailIngredient } = useSelector((state) => state.recipes);
+  const { detailInstruction } = useSelector((state) => state.recipes);
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetchDataDetail(params.id);
-  }, [params]);
+    dispatch(getDataDetailRecipesCall(params.id));
+  }, [params, dispatch]);
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-center mt-5">
@@ -29,10 +25,10 @@ const MainContentDetail = () => {
         <ContentTitleDetail title={detail.name} />
       </div>
       <div className="flex justify-center">
-        <ContentIngredients ingredient={ingredient} />
+        <ContentIngredients ingredient={detailIngredient} />
       </div>
       <div className="flex justify-center">
-        <ContentInstruction instruction={instruction} />
+        <ContentInstruction instruction={detailInstruction} />
       </div>
     </div>
   );

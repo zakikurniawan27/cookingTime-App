@@ -1,20 +1,22 @@
+import { useDispatch } from "react-redux";
 import recipes from "../../database/json/RecipesTags.json";
 import {
-  fetchDataCategoryRecipes,
-  fetchDataRecipes,
-} from "../../service/recipes.service";
+  getDataCategoryRecipesCall,
+  getDataRecipesCall,
+} from "../../store/action/recipesAction";
 
-const ButtonTags = ({ setCategory, setOnCategory }) => {
+const ButtonTags = ({ setOnCategory }) => {
+  const dispatch = useDispatch();
   const clickMenu = async (category) => {
     if (category.value == "all") {
-      fetchDataRecipes();
+      dispatch(getDataRecipesCall());
       setOnCategory(false);
     } else {
-      const data = await fetchDataCategoryRecipes(category.value);
-      setCategory(data.data.recipes);
+      dispatch(getDataCategoryRecipesCall(category.value));
       setOnCategory(true);
     }
   };
+
   return (
     <>
       {recipes.map((item, index) => (
