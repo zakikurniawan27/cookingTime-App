@@ -1,9 +1,9 @@
 import InputGroupSearch from "../atoms/InputGroupSearch";
 
-const ContentSearch = ({ setRecipes }) => {
+const ContentSearch = () => {
   return (
     <div id="search" className="block">
-      <InputGroupSearch setRecipes={setRecipes} />
+      <InputGroupSearch />
     </div>
   );
 };
